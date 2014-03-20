@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="TileSample.MainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:me="clr-namespace:TileSample"
+             mc:Ignorable="d" 
+              x:Name="me" Loaded="UserControl_Loaded" SizeChanged="me_SizeChanged">
+    <UserControl.Resources>
+        <Storyboard x:Key="ResizingAnim" Completed="Storyboard_Completed_1">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0" Storyboard.TargetName="me" Duration="0:0:0.35"/>
+        </Storyboard>
+        <Storyboard x:Key="ResizingAnim2" Completed="Storyboard_Completed_2" >
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Storyboard.TargetName="me" Duration="0:0:0.3"/>
+        </Storyboard>
+     
+    </UserControl.Resources>
+    <Grid>
+        <Grid x:Name="Small_grd">
+            <TextBlock FontSize="28" Text="Hello world!" Foreground="White"></TextBlock>
+        </Grid>
+        <Grid x:Name="Large_grd" Visibility="Collapsed">
+            <TextBlock FontSize="28" Text="This is the large view" Foreground="White"></TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>
