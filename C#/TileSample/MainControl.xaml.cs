@@ -55,8 +55,13 @@ namespace TileSample
         {
             if (me.ActualHeight > 125)
             {
+                Small_grd.Visibility = System.Windows.Visibility.Hidden;
                 Large_grd.Visibility = System.Windows.Visibility.Visible;
                 ((Storyboard)Resources["ResizingAnim2"]).Begin();
+            }
+            else
+            {
+                Small_grd.Visibility = System.Windows.Visibility.Visible;
             }
          
             ((Storyboard)Resources["ResizingAnim2"]).Begin();
@@ -66,7 +71,5 @@ namespace TileSample
         {
             isAnimStarted = false;
         }
-
-
     }
 }
