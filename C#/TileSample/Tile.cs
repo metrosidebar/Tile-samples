@@ -24,7 +24,7 @@ namespace TileSample
         }
         public int LargeHeight()
         {
-            return 240;
+            return 264;
         }
         public bool Separator()
         {
