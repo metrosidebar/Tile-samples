@@ -23,22 +23,25 @@ namespace TileSample
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            //This line must be used in order to specify the main control
             _settingsManager.ID = this;
         }
 
-        private void LoadSettings()
-        {
-            string mySetting = _settingsManager.GetSetting("mySetting");
-        }
+        //Read stored settings
+        //private void LoadSettings()
+        //{
+        //    string mySetting = _settingsManager.GetSetting("mySetting");
+        //}
 
-        private void SaveSettings()
-        {
-            SettingsManager.SettingData mySetting = new SettingsManager.SettingData() { keyword = "mySetting", value = "settingValue" };
+        //Store settings
+        //private void SaveSettings()
+        //{
+        //    SettingsManager.SettingData mySetting = new SettingsManager.SettingData() { keyword = "mySetting", value = "settingValue" };
                      
-            List<SettingsManager.SettingData> SettingsCollection = new List<SettingsManager.SettingData>();
-            SettingsCollection.Add(mySetting);
-             _settingsManager.SaveSettings(SettingsCollection);
-        }
+        //    List<SettingsManager.SettingData> SettingsCollection = new List<SettingsManager.SettingData>();
+        //    SettingsCollection.Add(mySetting);
+        //     _settingsManager.SaveSettings(SettingsCollection);
+        //}
 
         bool isAnimStarted = false;
         private void me_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -71,5 +74,7 @@ namespace TileSample
         {
             isAnimStarted = false;
         }
+
+
     }
 }
